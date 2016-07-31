@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+
+use_doorkeeper
 root 'timeline#index'
 
 #users
@@ -33,6 +35,8 @@ root 'timeline#index'
   put 'api/events/:id' => 'api/events#update'
   delete 'api/events/:id' => 'api/events#delete'
 
+#api users
+post 'api/registrations' => 'api/registrations#create'
 
 
 end

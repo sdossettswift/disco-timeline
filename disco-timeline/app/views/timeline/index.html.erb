@@ -1,6 +1,6 @@
 <div class="container">
     <header>
-      <h1>Swift Discovery</h1> 
+      <h1>Swift Discovery</h1>
     </header>
 </div>
 
@@ -14,7 +14,7 @@
    $(document).ready(function(){
        var embed = document.getElementById('timeline-embed');
        embed.style.height = getComputedStyle(document.body).height;
-       window.timeline = new TL.Timeline('timeline-embed', '/sample-whitney.json', { hash_bookmark: false});
+       window.timeline = new TL.Timeline('timeline-embed', '/api/events.json', { hash_bookmark: false});
        window.addEventListener('resize', function() {
          var embed = document.getElementById('timeline-embed');
          embed.style.height = getComputedStyle(document.body).height;

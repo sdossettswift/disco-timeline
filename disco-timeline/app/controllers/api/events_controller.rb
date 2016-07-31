@@ -1,5 +1,5 @@
 class Api::EventsController < ApplicationController
-  before_action :doorkeeper_authorize!
+  # before_action :doorkeeper_authorize!
 
   before_action do
     request.format = :json
@@ -22,7 +22,6 @@ class Api::EventsController < ApplicationController
     @event.minute = params[:event][:minute]
     @event.caption = params[:event][:caption]
     @event.credit = params[:event][:credit]
-    @event.url = params[:event][:url]
     @event.thumbnail = params[:event][:thumbnail]
     if @event.save
         redirect_to root_path, notice: "Event Added!"
@@ -31,7 +30,7 @@ class Api::EventsController < ApplicationController
 end
 
   def index
-    @event= Event.all
+    @events= Event.all
   end
 
   def show
@@ -49,7 +48,6 @@ end
    @event.minute = params[:event][:minute]
    @event.caption = params[:event][:caption]
    @event.credit = params[:event][:credit]
-   @event.url = params[:event][:url]
    @event.thumbnail = params[:event][:thumbnail]
 
      if @event.save
